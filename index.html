@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wandermoi - Portfolio</title>
+    <style>
+        /* Cài đặt chung */
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1f;
+            --box-bg: #2b2b2c;
+            --text-main: #fafafa;
+            --text-muted: #d6d6d6;
+            --accent: #ffdb70;
+            --border-color: #383838;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 25px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Cột Trái (Sidebar) */
+        .sidebar {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            width: 25%;
+            text-align: center;
+            height: fit-content;
+        }
+
+        .avatar-box {
+            background-color: var(--box-bg);
+            border-radius: 20px;
+            padding: 15px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: 120px;
+            border-radius: 15px;
+        }
+
+        .name {
+            margin: 10px 0 5px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .title {
+            background-color: var(--box-bg);
+            color: var(--text-muted);
+            padding: 5px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .separator {
+            border: none;
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 20px 0;
+        }
+
+        .contact-info {
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            background-color: var(--box-bg);
+            color: var(--accent);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .contact-text span {
+            display: block;
+            color: var(--text-muted);
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        /* Cột Phải (Main Content) */
+        .main-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            width: 75%;
+        }
+
+        h2.section-title {
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 4px;
+            width: 50px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .about-text {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* Lưới Kỹ Năng (What I'm Doing) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: var(--box-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .service-icon {
+            font-size: 32px;
+            color: var(--accent);
+        }
+
+        .service-content h4 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .service-content p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Reponsive cho điện thoại */
+        @media (max-width: 900px) {
+            .container { flex-direction: column; }
+            .sidebar, .main-content { width: 100%; box-sizing: border-box; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="avatar-box">
+                <img src="https://github.com/wandermoi.png" alt="Avatar" class="avatar">
+            </div>
+            <h1 class="name">Nghiem Nguyen</h1>
+            <div class="title">Backend Developer</div>
+
+            <hr class="separator">
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-text">
+                        <span>Email</span>
+                        ndnghiemsgu@gmail.com
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-text">
+                        <span>Phone</span>
+                        +84 869 368 864
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-text">
+                        <span>Location</span>
+                        Vietnam
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-text">
+                <p>I am a Backend Developer with a deep interest in building robust, high-performance IT systems. I enjoy diving into the core of how applications function, turning complex data challenges into streamlined, efficient architectures.</p>
+                <p>My focus is on backend infrastructure, database management, and system optimization. Whether it's ensuring data consistency across multiple nodes or fine-tuning queries for maximum speed, I am passionate about creating technical solutions that are both scalable and reliable.</p>
+            </div>
+
+            <h2 class="section-title">What I'm Doing</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🗄️</div>
+                    <div class="service-content">
+                        <h4>Distributed Databases</h4>
+                        <p>Designing and managing distributed database systems, ensuring high availability and seamless data distribution.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <div class="service-content">
+                        <h4>Backend Development</h4>
+                        <p>Building secure, scalable APIs and server-side logic that power modern web and mobile applications.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <div class="service-content">
+                        <h4>SQL & Replication</h4>
+                        <p>Implementing complex SQL replication setups and maintaining data synchronization across servers.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <div class="service-content">
+                        <h4>Query Optimization</h4>
+                        <p>Analyzing database performance bottlenecks and optimizing queries to achieve the fastest execution times.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
